@@ -1,401 +1,120 @@
-* {
+/* style.css */
+body,
+html {
   margin: 0;
   padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+.image-section {
+  flex: 1;
+  background-color: #f5f1e8; /* Cor de fundo da seção da imagem */
+  background-image: url("../assets/imgs/mulher-profissional.png"); /* Substitua pela URL da sua imagem */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.form-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.form-wrapper {
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+p {
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.input-group {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #333;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
   box-sizing: border-box;
 }
 
-:root {
-  /* Cores */
-  --primary-orange: #f5a623;
-  --primary-orange-hover: #e8944a;
-  --background-beige: #f5f1e8;
-  --white: #ffffff;
-  --dark-gray: #333333;
-  --light-gray: #999999;
-  --border-gray: #e0e0e0;
-  --success-green: #10b981;
-  --success-light: #d1fae5;
-  --info-blue: #3b82f6;
-  --info-light: #eff6ff;
-}
-
-/* ======================================== ESTILOS GLOBAIS ======================================== */
-html,
-body {
-  height: 100%;
+button {
   width: 100%;
-}
-
-body {
-  font-family: var(--font-body);
-  background-color: var(--white);
-  color: var(--dark-gray);
-  line-height: 1.6;
-}
-
-/* ======================================== LAYOUT PRINCIPAL ======================================== */
-.container {
-  display: flex;
-  min-height: 100vh;
-  background-color: var(--white);
-}
-
-/* ======================================== LADO ESQUERDO - IMAGEM ======================================== */
-.left-section {
-  display: flex;
-  width: 45%;
-  background: linear-gradient(135deg, #fef3e2 0%, #fce8d6 100%);
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.blob-container {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Blob Shape de fundo */
-.blob {
-  position: absolute;
-  width: 400px;
-  height: 400px;
-  background-color: rgba(245, 166, 35, 0.2);
-  border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
-  filter: blur(40px);
-  animation: blobAnimation 8s infinite;
-  z-index: 1;
-}
-
-@keyframes blobAnimation {
-  0%,
-  100% {
-    transform: translate(0, 0) scale(1);
-  }
-  25% {
-    transform: translate(20px, -30px) scale(1.05);
-  }
-  50% {
-    transform: translate(-20px, 20px) scale(0.95);
-  }
-  75% {
-    transform: translate(30px, 10px) scale(1.02);
-  }
-}
-
-/* Imagem Placeholder */
-.image-placeholder {
-  position: relative;
-  z-index: 10;
-  width: 280px;
-  height: 380px;
-  background: linear-gradient(180deg, #1f2937 0%, #111827 100%);
-  border-radius: 24px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  color: var(--white);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-}
-
-.user-icon {
-  width: 80px;
-  height: 80px;
-  opacity: 0.6;
-}
-
-.image-placeholder p {
-  font-size: 14px;
-  font-weight: 500;
-}
-
-/* ======================================== LADO DIREITO - FORMULÁRIO ======================================== */
-.right-section {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 40px 24px;
-  background-color: var(--white);
-}
-
-@media (min-width: 1024px) {
-  .right-section {
-    width: 60%;
-    padding: 40px 64px;
-  }
-}
-
-.form-container {
-  width: 100%;
-  max-width: 480px;
-}
-
-/* ======================================== CONTEÚDO DO FORMULÁRIO ======================================== */
-.form-content,
-.success-content {
-  animation: fadeIn 0.5s ease-in;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.hidden {
-  display: none !important;
-}
-
-/* Título */
-h1 {
-  font-family: var(--font-heading);
-  font-size: 36px;
-  font-weight: 700;
-  color: var(--dark-gray);
-  margin-bottom: 16px;
-  line-height: 1.2;
-}
-
-@media (max-width: 640px) {
-  h1 {
-    font-size: 28px;
-  }
-}
-
-/* Descrição */
-.description {
-  font-size: 16px;
-  color: #666666;
-  margin-bottom: 32px;
-  line-height: 1.6;
-}
-
-/* ======================================== GRUPO DE FORMULÁRIO ======================================== */
-.form-group {
-  margin-bottom: 24px;
-}
-
-label {
-  display: block;
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--dark-gray);
-  margin-bottom: 8px;
-}
-
-input[type="email"] {
-  width: 100%;
-  padding: 12px 16px;
-  font-size: 14px;
-  border: 2px solid var(--border-gray);
-  border-radius: 8px;
-  color: var(--dark-gray);
-  background-color: var(--white);
-  transition: var(--transition);
-}
-
-input[type="email"]::placeholder {
-  color: #aaaaaa;
-}
-
-input[type="email"]:focus {
-  outline: none;
-  border-color: var(--primary-orange);
-  box-shadow: 0 0 0 3px rgba(245, 166, 35, 0.1);
-}
-
-input[type="email"]:disabled {
-  background-color: #f5f5f5;
-  cursor: not-allowed;
-}
-
-/* ======================================== BOTÕES ======================================== */
-.btn-defaunt {
-  width: 100%;
-  padding: 14px 24px;
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--white);
-  background-color: var(--primary-orange);
+  padding: 12px;
+  background-color: #f28c28; /* Cor laranja do botão */
+  color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 25px;
   cursor: pointer;
-  transition: var(--transition);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  position: relative;
+  font-size: 16px;
+  font-weight: bold;
 }
 
-.btn-defaunt:hover:not(:disabled) {
-  background-color: var(--primary-orange-hover);
-  box-shadow: 0 12px 24px rgba(245, 166, 35, 0.3);
-  transform: translateY(-2px);
+button:hover {
+  background-color: #f28c28;
 }
 
-.btn-defaunt:active:not(:disabled) {
-  transform: scale(0.98);
-}
-
-.btn-defaunt:disabled {
-  opacity: 0.7;
-  cursor: not-allowed;
-}
-
-.spinner {
-  width: 16px;
-  height: 16px;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  border-top-color: var(--white);
-  border-radius: 50%;
-  animation: spin 0.8s linear infinite;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* ======================================== LINKS ======================================== */
 .login-link {
-  margin-top: 24px;
-  text-align: center;
-}
-
-.login-link p {
+  margin-top: 20px;
   font-size: 14px;
-  color: #666666;
 }
 
 .login-link a {
-  color: var(--primary-orange);
+  color: #e8a956;
   text-decoration: none;
-  font-weight: 600;
-  transition: var(--transition);
+  font-weight: bold;
 }
 
-.login-link a:hover {
-  color: var(--primary-orange-hover);
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+  display: none; /* Oculto por padrão */
 }
 
-/* ======================================== TELA DE SUCESSO ======================================== */
-.success-icon {
-  width: 64px;
-  height: 64px;
-  background-color: var(--success-light);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 24px;
-}
-
-.success-icon svg {
-  width: 32px;
-  height: 32px;
-  color: var(--success-green);
-  stroke-width: 3;
-}
-
-h2 {
-  font-family: var(--font-heading);
-  font-size: 28px;
-  font-weight: 700;
-  color: var(--dark-gray);
+.success-message {
+  display: none; /* Começa oculto */
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #a5d6a7; /* Verde claro */
+  color: #1b5e20; /* Verde escuro para o texto */
+  border-radius: 5px;
   text-align: center;
-  margin-bottom: 12px;
+  font-weight: bold;
 }
 
-.success-content p {
-  text-align: center;
-  color: #666666;
-  margin-bottom: 24px;
-  font-size: 15px;
-}
-
-.success-content span {
-  font-weight: 600;
-  color: var(--dark-gray);
-}
-
-/* ======================================== CAIXA DE INFORMAÇÃO ======================================== */
-.info-box {
-  background-color: var(--info-light);
-  border: 1px solid #bfdbfe;
-  border-radius: 8px;
-  padding: 16px;
-  margin-bottom: 24px;
-}
-
-.info-box p {
-  font-size: 14px;
-  color: #1e40af;
-  margin: 0;
-}
-
-.info-box strong {
-  font-weight: 600;
-}
-
-/* ======================================== RESPONSIVIDADE ======================================== */
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-  }
-
-  .left-section {
-    display: none;
-  }
-
-  .right-section {
-    width: 100%;
-    min-height: 100vh;
-    padding: 32px 20px;
-  }
-
-  h1 {
-    font-size: 24px;
-  }
-
-  .description {
-    font-size: 14px;
-  }
-}
-
-/* ======================================== ACESSIBILIDADE ======================================== */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-
-button:focus-visible,
-input:focus-visible,
-a:focus-visible {
-  outline: 2px solid var(--primary-orange);
-  outline-offset: 2px;
-}
-
-.woman-image {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  object-position: center;
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+  display: none; /* Oculto por padrão */
 }
